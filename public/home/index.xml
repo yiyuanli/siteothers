@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homes on My New Hugo Site</title>
+    <link>http://yiyuanli.github.io/site/home/</link>
+    <description>Recent content in Homes on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Nov 2016 09:54:08 +0000</lastBuildDate>
+    
+	<atom:link href="http://yiyuanli.github.io/site/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Home</title>
+      <link>http://yiyuanli.github.io/site/home/home/</link>
+      <pubDate>Sat, 19 Nov 2016 09:54:08 +0000</pubDate>
+      
+      <guid>http://yiyuanli.github.io/site/home/home/</guid>
+      <description>Welcome to Yi-Yuan’s Website!
+Home Home Home Home Home My name is Yi-Yuan Li, a Civil Engineering M.Sc student at University of Macau, specializing in Structural Engineering. I am working in Dynamics &amp;amp; Monitoring laboratory under the supervision of Prof. Ka-Veng Yuen. My study interests: Structural Dynamics; Model Updating; Vibration Control; Structural Health Monitoring; System Identification; Modal Analysis; Earthquake Engineering. I’m ready to learn more about them any time! My skills: Matlab; Fortran My Curriculum Vitae My Statement of Interest</description>
+    </item>
+    
+  </channel>
+</rss>

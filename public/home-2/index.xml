@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home-2s on My New Hugo Site</title>
+    <link>http://yiyuanli.github.io/site/home-2/</link>
+    <description>Recent content in Home-2s on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Nov 2016 05:51:48 +0000</lastBuildDate>
+    
+	<atom:link href="http://yiyuanli.github.io/site/home-2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>start</title>
+      <link>http://yiyuanli.github.io/site/home-2/home-2/</link>
+      <pubDate>Fri, 18 Nov 2016 05:51:48 +0000</pubDate>
+      
+      <guid>http://yiyuanli.github.io/site/home-2/home-2/</guid>
+      <description>There is no limits between science and art</description>
+    </item>
+    
+  </channel>
+</rss>

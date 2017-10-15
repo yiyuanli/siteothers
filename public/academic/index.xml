@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Academics on My New Hugo Site</title>
+    <link>http://yiyuanli.github.io/site/academic/</link>
+    <description>Recent content in Academics on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Nov 2016 06:24:23 +0000</lastBuildDate>
+    
+	<atom:link href="http://yiyuanli.github.io/site/academic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Academics</title>
+      <link>http://yiyuanli.github.io/site/academic/academic/</link>
+      <pubDate>Tue, 22 Nov 2016 06:24:23 +0000</pubDate>
+      
+      <guid>http://yiyuanli.github.io/site/academic/academic/</guid>
+      <description>My current research focuses on: Direct model updating method using incomplete modal measurements based on system control theory.
+After applying this new method, the updated Finite Element (FE) model can reproduce the measured modal frequencies exactly without disturbing the unmeasured modal frequencies.
+Academics
+At first, a 960 degree-of-freedom (DOF) FE model was used to illustrate the efficiency of this method. The following figures are the first 10 mode shapes of the updated FE model.</description>
+    </item>
+    
+  </channel>
+</rss>
