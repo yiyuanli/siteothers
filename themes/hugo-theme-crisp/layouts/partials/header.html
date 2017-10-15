@@ -74,10 +74,11 @@
     {{ partial "criticalpath.html" . }}
     </head>
     <body>
-        <header id="header">
-            <h1><a href="{{.Site.BaseURL}}">{{.Site.Title}}</a></h1>
-            <p>{{.Description}}</p>
-
+        <header id="header">          
+            <h1><a href="{{.Site.BaseURL}}"> {{.Site.Title}}</a></h1>
+			<center>
+			<p><h6><i>Ph.D.&nbsp Dynamics and Control<p>
+			<p>University of Bristol</i></h6><p>
             {{ partial "follow.html" . }}
             {{ partial "navigation.html" . }}
         </header>

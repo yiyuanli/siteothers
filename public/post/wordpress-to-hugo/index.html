@@ -7,24 +7,24 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" Asymptote Installation &middot;  YIYUAN LI" />
+        <meta property="og:title" content=" wordpress转hugo，并托管在GitHub上 &middot;  YIYUAN LI" />
         <meta property="og:site_name" content="YIYUAN LI" />
-        <meta property="og:url" content="http://yiyuanli.github.io/site/post/asymptote-install/" />
+        <meta property="og:url" content="http://yiyuanli.github.io/site/post/wordpress-to-hugo/" />
 
     
         <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2016-11-23T03:09:13Z" />
+        <meta property="og:article:published_time" content="2017-10-15T10:30:16Z" />
         
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@" />
         <meta name="twitter:creator" content="@" />
-        <meta name="twitter:title" content="Asymptote Installation" />
+        <meta name="twitter:title" content="wordpress转hugo，并托管在GitHub上" />
         <meta name="twitter:description" content="" />
-        <meta name="twitter:url" content="http://yiyuanli.github.io/site/post/asymptote-install/" />
+        <meta name="twitter:url" content="http://yiyuanli.github.io/site/post/wordpress-to-hugo/" />
     
 
-        <title> Asymptote Installation &middot;  YIYUAN LI</title>
+        <title> wordpress转hugo，并托管在GitHub上 &middot;  YIYUAN LI</title>
 
     
         <meta name="description" content="" />
@@ -43,21 +43,21 @@
     
 
     
-        <link rel="canonical" href="http://yiyuanli.github.io/site/post/asymptote-install/" />
+        <link rel="canonical" href="http://yiyuanli.github.io/site/post/wordpress-to-hugo/" />
 
     
     <script type="application/ld+json">
     { 
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "Asymptote Installation",
+        "headline": "wordpress转hugo，并托管在GitHub上",
         "author": {
             "@type": "Person",
             "name": "http://profiles.google.com/?rel=author"
         },
-        "datePublished": "2016-11-23",
+        "datePublished": "2017-10-15",
         "description": "",
-        "wordCount": 1
+        "wordCount": 85
     }
     </script>
     
@@ -637,20 +637,51 @@ footer a:hover
 
 <article id="" class="post">
     <div class="post-stamp">
-        <time datetime="2016-11-23T03:09:13Z">
-            23 Nov 2016
+        <time datetime="2017-10-15T10:30:16Z">
+            15 Oct 2017
         </time>
         <span class="taglist">
         
         </span>
     </div>
-    <h1 class="post-title">Asymptote Installation</h1>
-    <p>哈哈哈哈哈哈哈哈</p>
+    <h1 class="post-title">wordpress转hugo，并托管在GitHub上</h1>
+    <p>在转之前我发现网上很少有介绍word press转hugo的中文文章，大多数都是
+word press转hexokinase或者Jekyll。 但是由上篇文章总结来看hugo目前是
+最适合静态网页生成器，故总结在此作为大家参考。</p>
+
+<p>wordpress动态网页转hugo静态网页并托管在GitHub上一共可以分成三步，
+1.在本地建立hugo site；
+2.把wordpress内容转为markdown格式并放入本地hugo site中；
+3.把已经放好转出内容的hugo site 部署到GitHub上。</p>
+
+<p>每步之间几乎是相互独立，互不影响。每个步骤都可以单独完成，如果想把wordpress
+转hexo或者Jekyll，或者要把hugo静态网页托管在GitHub上，都可以参考此篇文章。</p>
+
+<p>下面开始正文：</p>
+
+<ol>
+<li>在本地建立一个hugo site，参见上篇博客（基于hugo的静态博客建立及
+部署在GitHub上）</li>
+<li>这一步是花费了我最长时间的一部，因为有两个wordpress转出工具————wordpress-to-hugo-exporter和Exitwp，两个我都有尝试，但是中间都遇到了一些问题，最终我用Exitwp解决了wordpress转出问题，下面就是详细过程.
+2.1. 导出word press文件：需要在wordpress/admin界面Tools-Export中把自己本来wordpress里的所有内容导出为xml文件。
+2.2. 我们用Exitwp（<a href="https://github.com/thomasf/exitwp）这个工具把xml文件转为markdown文件。下载Exitwp（https://github.com/thomasf/exitwp.git），然后把所有的xml文件都放在解压了的Exitwp文件夹里的word">https://github.com/thomasf/exitwp）这个工具把xml文件转为markdown文件。下载Exitwp（https://github.com/thomasf/exitwp.git），然后把所有的xml文件都放在解压了的Exitwp文件夹里的word</a> press-xml目录下；
+2.3. 进行下部之前，我们需要安装五个software，分别是
+2.3.1. python 2.7 （<a href="https://www.python.org/），记得安装完之后要在环境变量-path中添加python，只有添加path之后才可以在cmd中运行python命令，否则后面几步运行会报错；">https://www.python.org/），记得安装完之后要在环境变量-path中添加python，只有添加path之后才可以在cmd中运行python命令，否则后面几步运行会报错；</a>
+2.3.2. html2text: 把html文件转为markdown文件（python编写）（<a href="http://www.aaronsw.com/2002/html2text/）参照指示，点击download之后直接把code拷贝下来建在一个新txt文档里并命名为html2text.py就行，这里是我建好的.py文件；">http://www.aaronsw.com/2002/html2text/）参照指示，点击download之后直接把code拷贝下来建在一个新txt文档里并命名为html2text.py就行，这里是我建好的.py文件；</a>
+2.3.3. PyYAML：Reading configuration files and writing YAML headers（python编写）（<a href="http://pyyaml.org/wiki/PyYAML）（这里是英文解释，有点难翻译，也不太懂什么意思）。下载安装包，然后直接在命令符中输入$">http://pyyaml.org/wiki/PyYAML）（这里是英文解释，有点难翻译，也不太懂什么意思）。下载安装包，然后直接在命令符中输入$</a> python setup.py install就可以了。
+2.3.4. beautiful soup：运行和下载wordpress posts 中的图片（也是python编写）（<a href="https://www.crummy.com/software/BeautifulSoup/），下载4.6.0版本，然后在cmd中输入$">https://www.crummy.com/software/BeautifulSoup/），下载4.6.0版本，然后在cmd中输入$</a> pip install beautifulsoup4, 运行，然后beautifulsoup4.6.0就安装在python27\lib\site-packages目录下了；
+2.3.5. xmllint：xmllint是一个处理及验证xml的工。（<a href="http://xmlsoft.org/downloads.html）Linux下只要安装libxml2就可以使用了，但是在Windows下就要麻烦很多。这一步也是很烦人的一部，因为官网上的指示一点都不清楚，可能针对linux系统比较详细吧，反正Windows系统非常不详细。所以我搜了很久才找到正确安装方法（可以参考这篇文章来安装xmllinthttp://flowingmotion.jojordan.org/2011/10/08/3-steps-to-download-xmllint/）">http://xmlsoft.org/downloads.html）Linux下只要安装libxml2就可以使用了，但是在Windows下就要麻烦很多。这一步也是很烦人的一部，因为官网上的指示一点都不清楚，可能针对linux系统比较详细吧，反正Windows系统非常不详细。所以我搜了很久才找到正确安装方法（可以参考这篇文章来安装xmllinthttp://flowingmotion.jojordan.org/2011/10/08/3-steps-to-download-xmllint/）</a>
+       首先找到xmllint的windows下载包（<a href="http://xmlsoft.org/sources/win32/），下载同一版本的libxml2，libxslt，iconv，zlib这四个zipfiles，解压，然后打开这四个文件bin目录，把四个bin文件里的东西全部复制到一个新的命名为bin的文件夹里，这个新的bin文件夹放在C盘下，然后将这个bin添加进环境变量path中。这样，xmllint就算是安装好了。">http://xmlsoft.org/sources/win32/），下载同一版本的libxml2，libxslt，iconv，zlib这四个zipfiles，解压，然后打开这四个文件bin目录，把四个bin文件里的东西全部复制到一个新的命名为bin的文件夹里，这个新的bin文件夹放在C盘下，然后将这个bin添加进环境变量path中。这样，xmllint就算是安装好了。</a>
+2.4. 在安装好了所有上述东西之后，在cmd中就最终可以输入$ xmllint &hellip;xml 命令了。我的xml文件是yiyuanli.wordpress.2017-10-04.xml,所以我就直接输入$ xmllint yiyuanli.wordpress.2017-10-04.xml,然后回车运行，（可能会提示有一些错误或者转化不完整，没关系，到时候可以在已经转好的markdown文件中修改），然后在exitwp/build/jekyll中就可以找到转出来的markdown文件们了，终于大功告成！xml文件成功转为markdown！
+2.5. 把转好的markdown文件复制到本地hugo site中的content目录下，然后在cmd中hugo site目录下运行 $ hugo server &ndash;theme=hugo-theme-crisp，然后网页输入localhost：1313就可以看到以前word press的post已经都移到hugo site中啦~~~</li>
+<li>在cmd中hugo site目录下运行$ hugo –-theme=hugo-theme-crisp –-baseUrl=“<a href="http://yiyuanli.github.io/site”，然后将生成的public目录下的所有文件都复制到GitHub的新建的repository">http://yiyuanli.github.io/site”，然后将生成的public目录下的所有文件都复制到GitHub的新建的repository</a> master 分支下就可以啦，如果想在cmd中直接用git命令也可以，不过如果你都会用git命令，那一定可以成功将public中的所有文件上传repository中。我用的是特别蠢的办法，适用大白小白非程序猿们，直接把public中的文件拖到master分支中，就完成啦，就可以在自己的github网页上（我的是<a href="https://yiyuanli.github.io/site/）看到生成的静态网页啦！（注意，不是需要把hugo">https://yiyuanli.github.io/site/）看到生成的静态网页啦！（注意，不是需要把hugo</a> stie下的所有文件都push到github repository中去，只要有public文件夹下的内容就足够了，不过可以新建另外一个repository储存其他文件夹，毕竟存档是很重要的一件事，不然后面哪里出了小错有可能就要把前面所有步骤都重新来一遍了!!!<br />
+<br /></li>
+</ol>
 
     <div id="social-bar">
 	<ul class="rrssb-buttons clearfix">
       <li class="email">
-          <a href="mailto:?subject=Asymptote%20Installation&amp;body=http://yiyuanli.github.io/site/post/asymptote-install/">
+          <a href="mailto:?subject=wordpress%e8%bd%achugo%ef%bc%8c%e5%b9%b6%e6%89%98%e7%ae%a1%e5%9c%a8GitHub%e4%b8%8a&amp;body=http://yiyuanli.github.io/site/post/wordpress-to-hugo/">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path transform="scale(0.014,-0.014) translate(0,-1670)" d="M1792 826v-794q0 -66 -47 -113t-113 -47h-1472q-66 0 -113 47t-47 113v794q44 -49 101 -87q362 -246 497 -345q57 -42 92.5 -65.5t94.5 -48t110 -24.5h1h1q51 0 110 24.5t94.5 48t92.5 65.5q170 123 498 345q57 39 100 87zM1792 1120q0 -79 -49 -151t-122 -123 q-376 -261 -468 -325q-10 -7 -42.5 -30.5t-54 -38t-52 -32.5t-57.5 -27t-50 -9h-1h-1q-23 0 -50 9t-57.5 27t-52 32.5t-54 38t-42.5 30.5q-91 64 -262 182.5t-205 142.5q-62 42 -117 115.5t-55 136.5q0 78 41.5 130t118.5 52h1472q65 0 112.5 -47t47.5 -113z"/>
@@ -660,7 +691,7 @@ footer a:hover
           </a>
       </li>
       <li class="facebook">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yiyuanli.github.io/site/post/asymptote-install/" class="popup">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://yiyuanli.github.io/site/post/wordpress-to-hugo/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434 c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726 c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
@@ -670,7 +701,7 @@ footer a:hover
           </a>
       </li>
 			<li class="twitter">
-          <a href="http://twitter.com/home?status=Asymptote%20Installation%20http://yiyuanli.github.io/site/post/asymptote-install/" class="popup">
+          <a href="http://twitter.com/home?status=wordpress%e8%bd%achugo%ef%bc%8c%e5%b9%b6%e6%89%98%e7%ae%a1%e5%9c%a8GitHub%e4%b8%8a%20http://yiyuanli.github.io/site/post/wordpress-to-hugo/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 		                  <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32 c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155 C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965 C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683 c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851 C26.275,7.229,25.39,8.196,24.253,8.756z"/>
@@ -680,7 +711,7 @@ footer a:hover
           </a>
       </li>
 			<li class="linkedin">
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://yiyuanli.github.io/site/post/asymptote-install/&amp;title=Asymptote%20Installation&amp;summary=%e5%93%88%e5%93%88%e5%93%88%e5%93%88%e5%93%88%e5%93%88%e5%93%88%e5%93%88..." class="popup">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://yiyuanli.github.io/site/post/wordpress-to-hugo/&amp;title=wordpress%e8%bd%achugo%ef%bc%8c%e5%b9%b6%e6%89%98%e7%ae%a1%e5%9c%a8GitHub%e4%b8%8a&amp;summary=%e5%9c%a8%e8%bd%ac%e4%b9%8b%e5%89%8d%e6%88%91%e5%8f%91%e7%8e%b0%e7%bd%91%e4%b8%8a%e5%be%88%e5%b0%91%e6%9c%89%e4%bb%8b%e7%bb%8dword%20press%e8%bd%achugo%e7%9a%84%e4%b8%ad%e6%96%87%e6%96%87%e7%ab%a0%ef%bc%8c%e5%a4%a7%e5%a4%9a%e6%95%b0%e9%83%bd%e6%98%af%20word%20press%e8%bd%achexokinase%e6%88%96%e8%80%85Jekyll%e3%80%82%20%e4%bd%86%e6%98%af%e7%94%b1%e4%b8%8a%e7%af%87%e6%96%87%e7%ab%a0%e6%80%bb%e7%bb%93%e6%9d%a5%e7%9c%8bhugo%e7%9b%ae%e5%89%8d%e6%98%af%20%e6%9c%80%e9%80%82%e5%90%88%e9%9d%99%e6%80%81%e7%bd%91%e9%a1%b5%e7%94%9f%e6%88%90%e5%99%a8%ef%bc%8c%e6%95%85%e6%80%bb%e7%bb%93%e5%9c%a8%e6%ad%a4%e4%bd%9c%e4%b8%ba%e5%a4%a7%e5%ae%b6%e5%8f%82%e8%80%83%e3%80%82%0awordpress%e5%8a%a8%e6%80%81%e7%bd%91%e9%a1%b5%e8%bd%achugo%e9%9d%99%e6%80%81%e7%bd%91%e9%a1%b5%e5%b9%b6%e6%89%98%e7%ae%a1%e5%9c%a8GitHub%e4%b8%8a%e4%b8%80%e5%85%b1%e5%8f%af%e4%bb%a5%e5%88%86%e6%88%90%e4%b8%89%e6%ad%a5%ef%bc%8c%201.%e5%9c%a8%e6%9c%ac%e5%9c%b0%e5%bb%ba%e7%ab%8bhugo%20site%ef%bc%9b%202.%e6%8a%8awordpress%e5%86%85%e5%ae%b9%e8%bd%ac%e4%b8%bamarkdown%e6%a0%bc%e5%bc%8f%e5%b9%b6%e6%94%be%e5%85%a5%e6%9c%ac%e5%9c%b0hugo%20site%e4%b8%ad%ef%bc%9b%203.%e6%8a%8a%e5%b7%b2%e7%bb%8f%e6%94%be%e5%a5%bd%e8%bd%ac%e5%87%ba%e5%86%85%e5%ae%b9%e7%9a%84hugo%20site%20%e9%83%a8%e7%bd%b2%e5%88%b0GitHub%e4%b8%8a%e3%80%82%0a%e6%af%8f%e6%ad%a5%e4%b9%8b%e9%97%b4%e5%87%a0%e4%b9%8e%e6%98%af%e7%9b%b8%e4%ba%92%e7%8b%ac%e7%ab%8b%ef%bc%8c%e4%ba%92%e4%b8%8d%e5%bd%b1%e5%93%8d%e3%80%82%e6%af%8f%e4%b8%aa%e6%ad%a5%e9%aa%a4%e9%83%bd%e5%8f%af%e4%bb%a5%e5%8d%95%e7%8b%ac%e5%ae%8c%e6%88%90%ef%bc%8c%e5%a6%82%e6%9e%9c%e6%83%b3%e6%8a%8awordpress%20%e8%bd%achexo%e6%88%96%e8%80%85Jekyll%ef%bc%8c%e6%88%96%e8%80%85%e8%a6%81%e6%8a%8ahugo%e9%9d%99%e6%80%81%e7%bd%91%e9%a1%b5%e6%89%98%e7%ae%a1%e5%9c%a8GitHub%e4%b8%8a%ef%bc%8c%e9%83%bd%e5%8f%af%e4%bb%a5%e5%8f%82%e8%80%83%e6%ad%a4%e7%af%87%e6%96%87%e7%ab%a0%e3%80%82%0a%e4%b8%8b%e9%9d%a2%e5%bc%80%e5%a7%8b%e6%ad%a3%e6%96%87%ef%bc%9a%0a%20%e5%9c%a8%e6%9c%ac%e5%9c%b0%e5%bb%ba%e7%ab%8b%e4%b8%80%e4%b8%aahugo%20site%ef%bc%8c%e5%8f%82%e8%a7%81%e4%b8%8a%e7%af%87%e5%8d%9a%e5%ae%a2%ef%bc%88%e5%9f%ba%e4%ba%8ehugo%e7%9a%84%e9%9d%99%e6%80%81%e5%8d%9a%e5%ae%a2%e5%bb%ba%e7%ab%8b%e5%8f%8a%20%e9%83%a8%e7%bd%b2%e5%9c%a8GitHub%e4%b8%8a%ef%bc%89%20%e8%bf%99%e4%b8%80%e6%ad%a5%e6%98%af%e8%8a%b1%e8%b4%b9%e4%ba%86%e6%88%91%e6%9c%80%e9%95%bf%e6%97%b6%e9%97%b4%e7%9a%84%e4%b8%80%e9%83%a8%ef%bc%8c%e5%9b%a0%e4%b8%ba%e6%9c%89%e4%b8%a4%e4%b8%aawordpress%e8%bd%ac%e5%87%ba%e5%b7%a5%e5%85%b7%e2%80%94%e2%80%94%e2%80%94%e2%80%94wordpress-to-hugo-exporter%e5%92%8cExitwp%ef%bc%8c%e4%b8%a4%e4%b8%aa%e6%88%91%e9%83%bd%e6%9c%89%e5%b0%9d%e8%af%95%ef%bc%8c%e4%bd%86%e6%98%af%e4%b8%ad%e9%97%b4%e9%83%bd%e9%81%87%e5%88%b0%e4%ba%86%e4%b8%80%e4%ba%9b%e9%97%ae%e9%a2%98%ef%bc%8c%e6%9c%80%e7%bb%88%e6%88%91%e7%94%a8Exitwp%e8%a7%a3%e5%86%b3%e4%ba%86wordpress%e8%bd%ac%e5%87%ba%e9%97%ae%e9%a2%98%ef%bc%8c%e4%b8%8b%e9%9d%a2%e5%b0%b1%e6%98%af%e8%af%a6%e7%bb%86%e8%bf%87%e7%a8%8b.%202.1.%20%e5%af%bc%e5%87%baword%20press%e6%96%87%e4%bb%b6%ef%bc%9a%e9%9c%80%e8%a6%81%e5%9c%a8wordpress%2fadmin%e7%95%8c%e9%9d%a2Tools-Export%e4%b8%ad%e6%8a%8a%e8%87%aa%e5%b7%b1%e6%9c%ac%e6%9d%a5wordpress%e9%87%8c%e7%9a%84%e6%89%80%e6%9c%89%e5%86%85%e5%ae%b9%e5%af%bc%e5%87%ba%e4%b8%baxml%e6%96%87%e4%bb%b6%e3%80%82%202.2.%20%e6%88%91%e4%bb%ac%e7%94%a8Exitwp%ef%bc%88https%3a%2f%2fgithub.com%2fthomasf%2fexitwp%ef%bc%89%e8%bf%99%e4%b8%aa%e5%b7%a5%e5%85%b7%e6%8a%8axml%e6%96%87%e4%bb%b6%e8%bd%ac%e4%b8%bamarkdown%e6%96%87%e4%bb%b6%e3%80%82%e4%b8%8b%e8%bd%bdExitwp%ef%bc%88https%3a%2f%2fgithub.com%2fthomasf%2fexitwp.git%ef%bc%89%ef%bc%8c%e7%84%b6%e5%90%8e%e6%8a%8a%e6%89%80%e6%9c%89%e7%9a%84xml%e6%96%87%e4%bb%b6%e9%83%bd%e6%94%be%e5%9c%a8%e8%a7%a3%e5%8e%8b%e4%ba%86%e7%9a%84Exitwp%e6%96%87%e4%bb%b6%e5%a4%b9%e9%87%8c%e7%9a%84word%20press-xml%e7%9b%ae%e5%bd%95%e4%b8%8b%ef%bc%9b%202.3.%20%e8%bf%9b%e8%a1%8c%e4%b8%8b%e9%83%a8%e4%b9%8b%e5%89%8d%ef%bc%8c%e6%88%91%e4%bb%ac%e9%9c%80%e8%a6%81%e5%ae%89%e8%a3%85%e4%ba%94%e4%b8%aasoftware%ef%bc%8c%e5%88%86%e5%88%ab%e6%98%af%202.3.1.%20python%202.7%20%ef%bc%88https%3a%2f%2fwww.python.org%2f%ef%bc%89%ef%bc%8c%e8%ae%b0%e5%be%97%e5%ae%89%e8%a3%85%e5%ae%8c%e4%b9%8b%e5%90%8e%e8%a6%81%e5%9c%a8%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f-path%e4%b8%ad%e6%b7%bb%e5%8a%a0python%ef%bc%8c%e5%8f%aa%e6%9c%89%e6%b7%bb%e5%8a%a0path%e4%b9%8b%e5%90%8e%e6%89%8d%e5%8f%af%e4%bb%a5%e5%9c%a8cmd%e4%b8%ad%e8%bf%90%e8%a1%8cpython%e5%91%bd%e4%bb%a4%ef%bc%8c%e5%90%a6%e5%88%99%e5%90%8e%e9%9d%a2%e5%87%a0%e6%ad%a5%e8%bf%90%e8%a1%8c%e4%bc%9a%e6%8a%a5%e9%94%99%ef%bc%9b%202.3.2.%20html2text%3a%20%e6%8a%8ahtml%e6%96%87%e4%bb%b6%e8%bd%ac%e4%b8%bamarkdown%e6%96%87%e4%bb%b6%ef%bc%88python%e7%bc%96%e5%86%99%ef%bc%89%ef%bc%88http%3a%2f%2fwww.aaronsw.com%2f2002%2fhtml2text%2f%ef%bc%89%e5%8f%82%e7%85%a7%e6%8c%87%e7%a4%ba%ef%bc%8c%e7%82%b9%e5%87%bbdownload%e4%b9%8b%e5%90%8e%e7%9b%b4%e6%8e%a5%e6%8a%8acode%e6%8b%b7%e8%b4%9d%e4%b8%8b%e6%9d%a5%e5%bb%ba%e5%9c%a8%e4%b8%80%e4%b8%aa%e6%96%b0txt%e6%96%87%e6%a1%a3%e9%87%8c%e5%b9%b6%e5%91%bd%e5%90%8d%e4%b8%bahtml2text.py%e5%b0%b1%e8%a1%8c%ef%bc%8c%e8%bf%99%e9%87%8c%e6%98%af%e6%88%91%e5%bb%ba%e5%a5%bd%e7%9a%84.py%e6%96%87%e4%bb%b6%ef%bc%9b%202.3.3.%20PyYAML%ef%bc%9aReading%20configuration%20files%20and%20writing%20YAML%20headers%ef%bc%88python%e7%bc%96%e5%86%99%ef%bc%89%ef%bc%88http%3a%2f%2fpyyaml.org%2fwiki%2fPyYAML%ef%bc%89%ef%bc%88%e8%bf%99%e9%87%8c%e6%98%af%e8%8b%b1%e6%96%87%e8%a7%a3%e9%87%8a%ef%bc%8c%e6%9c%89%e7%82%b9%e9%9a%be%e7%bf%bb%e8%af%91%ef%bc%8c%e4%b9%9f%e4%b8%8d%e5%a4%aa%e6%87%82%e4%bb%80%e4%b9%88%e6%84%8f%e6%80%9d%ef%bc%89%e3%80%82%e4%b8%8b%e8%bd%bd%e5%ae%89%e8%a3%85%e5%8c%85%ef%bc%8c%e7%84%b6%e5%90%8e%e7%9b%b4%e6%8e%a5%e5%9c%a8%e5%91%bd%e4%bb%a4%e7%ac%a6%e4%b8%ad%e8%be%93%e5%85%a5%24%20python%20setup.py%20install%e5%b0%b1%e5%8f%af%e4%bb%a5%e4%ba%86%e3%80%82%202.3.4.%20beautiful%20soup%ef%bc%9a%e8%bf%90%e8%a1%8c%e5%92%8c%e4%b8%8b%e8%bd%bdwordpress%20posts%20%e4%b8%ad%e7%9a%84%e5%9b%be%e7%89%87%ef%bc%88%e4%b9%9f%e6%98%afpython%e7%bc%96%e5%86%99%ef%bc%89%ef%bc%88https%3a%2f%2fwww.crummy.com%2fsoftware%2fBeautifulSoup%2f%ef%bc%89%ef%bc%8c%e4%b8%8b%e8%bd%bd4.6.0%e7%89%88%e6%9c%ac%ef%bc%8c%e7%84%b6%e5%90%8e%e5%9c%a8cmd%e4%b8%ad%e8%be%93%e5%85%a5%24%20pip%20install%20beautifulsoup4%2c%20%e8%bf%90%e8%a1%8c%ef%bc%8c%e7%84%b6%e5%90%8ebeautifulsoup4.6.0%e5%b0%b1%e5%ae%89%e8%a3%85%e5%9c%a8python27%5clib%5csite-packages%e7%9b%ae%e5%bd%95%e4%b8%8b%e4%ba%86%ef%bc%9b%202.3.5.%20xmllint%ef%bc%9axmllint%e6%98%af%e4%b8%80%e4%b8%aa%e5%a4%84%e7%90%86%e5%8f%8a%e9%aa%8c%e8%af%81xml%e7%9a%84%e5%b7%a5%e3%80%82%ef%bc%88http%3a%2f%2fxmlsoft.org%2fdownloads.html%ef%bc%89Linux%e4%b8%8b%e5%8f%aa%e8%a6%81%e5%ae%89%e8%a3%85libxml2%e5%b0%b1%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e4%ba%86%ef%bc%8c%e4%bd%86%e6%98%af%e5%9c%a8Windows%e4%b8%8b%e5%b0%b1%e8%a6%81%e9%ba%bb%e7%83%a6%e5%be%88%e5%a4%9a%e3%80%82%e8%bf%99%e4%b8%80%e6%ad%a5%e4%b9%9f%e6%98%af%e5%be%88%e7%83%a6%e4%ba%ba%e7%9a%84%e4%b8%80%e9%83%a8%ef%bc%8c%e5%9b%a0%e4%b8%ba%e5%ae%98%e7%bd%91%e4%b8%8a%e7%9a%84%e6%8c%87%e7%a4%ba%e4%b8%80%e7%82%b9%e9%83%bd%e4%b8%8d%e6%b8%85%e6%a5%9a%ef%bc%8c%e5%8f%af%e8%83%bd%e9%92%88%e5%af%b9linux%e7%b3%bb%e7%bb%9f%e6%af%94%e8%be%83%e8%af%a6%e7%bb%86%e5%90%a7%ef%bc%8c%e5%8f%8d%e6%ad%a3Windows%e7%b3%bb%e7%bb%9f%e9%9d%9e%e5%b8%b8%e4%b8%8d%e8%af%a6%e7%bb%86%e3%80%82%e6%89%80%e4%bb%a5%e6%88%91%e6%90%9c%e4%ba%86%e5%be%88%e4%b9%85%e6%89%8d%e6%89%be%e5%88%b0%e6%ad%a3%e7%a1%ae%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%95%ef%bc%88%e5%8f%af%e4%bb%a5%e5%8f%82%e8%80%83%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0%e6%9d%a5%e5%ae%89%e8%a3%85xmllinthttp%3a%2f%2fflowingmotion.jojordan.org%2f2011%2f10%2f08%2f3-steps-to-download-xmllint%2f%ef%bc%89%20%e9%a6%96%e5%85%88%e6%89%be%e5%88%b0xmllint%e7%9a%84windows%e4%b8%8b%e8%bd%bd%e5%8c%85%ef%bc%88http%3a%2f%2fxmlsoft.org%2fsources%2fwin32%2f%ef%bc%89%ef%bc%8c%e4%b8%8b%e8%bd%bd%e5%90%8c%e4%b8%80%e7%89%88%e6%9c%ac%e7%9a%84libxml2%ef%bc%8clibxslt%ef%bc%8ciconv%ef%bc%8czlib%e8%bf%99%e5%9b%9b%e4%b8%aazipfiles%ef%bc%8c%e8%a7%a3%e5%8e%8b%ef%bc%8c%e7%84%b6%e5%90%8e%e6%89%93%e5%bc%80%e8%bf%99%e5%9b%9b%e4%b8%aa%e6%96%87%e4%bb%b6bin%e7%9b%ae%e5%bd%95%ef%bc%8c%e6%8a%8a%e5%9b%9b%e4%b8%aabin%e6%96%87%e4%bb%b6%e9%87%8c%e7%9a%84%e4%b8%9c%e8%a5%bf%e5%85%a8%e9%83%a8%e5%a4%8d%e5%88%b6%e5%88%b0%e4%b8%80%e4%b8%aa%e6%96%b0%e7%9a%84%e5%91%bd%e5%90%8d%e4%b8%babin%e7%9a%84%e6%96%87%e4%bb%b6%e5%a4%b9%e9%87%8c%ef%bc%8c%e8%bf%99%e4%b8%aa%e6%96%b0%e7%9a%84bin%e6%96%87%e4%bb%b6%e5%a4%b9%e6%94%be%e5%9c%a8C%e7%9b%98%e4%b8%8b%ef%bc%8c%e7%84%b6%e5%90%8e%e5%b0%86%e8%bf%99%e4%b8%aabin%e6%b7%bb%e5%8a%a0%e8%bf%9b%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8fpath%e4%b8%ad%e3%80%82%e8%bf%99%e6%a0%b7%ef%bc%8cxmllint%e5%b0%b1%e7%ae%97%e6%98%af%e5%ae%89%e8%a3%85%e5%a5%bd%e4%ba%86%e3%80%82%202.4.%20%e5%9c%a8%e5%ae%89%e8%a3%85%e5%a5%bd%e4%ba%86%e6%89%80%e6%9c%89%e4%b8%8a%e8%bf%b0%e4%b8%9c%e8%a5%bf%e4%b9%8b%e5%90%8e%ef%bc%8c%e5%9c%a8cmd%e4%b8%ad%e5%b0%b1%e6%9c%80%e7%bb%88%e5%8f%af%e4%bb%a5%e8%be%93%e5%85%a5%24%20xmllint%20%26hellip%3bxml%20%e5%91%bd%e4%bb%a4%e4%ba%86%e3%80%82%e6%88%91%e7%9a%84xml%e6%96%87%e4%bb%b6%e6%98%afyiyuanli.wordpress.2017-10-04.xml%2c%e6%89%80%e4%bb%a5%e6%88%91%e5%b0%b1%e7%9b%b4%e6%8e%a5%e8%be%93%e5%85%a5%24%20xmllint%20yiyuanli.wordpress.2017-10-04.xml%2c%e7%84%b6%e5%90%8e%e5%9b%9e%e8%bd%a6%e8%bf%90%e8%a1%8c%ef%bc%8c%ef%bc%88%e5%8f%af%e8%83%bd%e4%bc%9a%e6%8f%90%e7%a4%ba%e6%9c%89%e4%b8%80%e4%ba%9b%e9%94%99%e8%af%af%e6%88%96%e8%80%85%e8%bd%ac%e5%8c%96%e4%b8%8d%e5%ae%8c%e6%95%b4%ef%bc%8c%e6%b2%a1%e5%85%b3%e7%b3%bb%ef%bc%8c%e5%88%b0%e6%97%b6%e5%80%99%e5%8f%af%e4%bb%a5%e5%9c%a8%e5%b7%b2%e7%bb%8f%e8%bd%ac%e5%a5%bd%e7%9a%84markdown%e6%96%87%e4%bb%b6%e4%b8%ad%e4%bf%ae%e6%94%b9%ef%bc%89%ef%bc%8c%e7%84%b6%e5%90%8e%e5%9c%a8exitwp%2fbuild%2fjekyll%e4%b8%ad%e5%b0%b1%e5%8f%af%e4%bb%a5%e6%89%be%e5%88%b0%e8%bd%ac%e5%87%ba%e6%9d%a5%e7%9a%84markdown%e6%96%87%e4%bb%b6%e4%bb%ac%e4%ba%86%ef%bc%8c%e7%bb%88%e4%ba%8e%e5%a4%a7%e5%8a%9f%e5%91%8a%e6%88%90%ef%bc%81xml%e6%96%87%e4%bb%b6%e6%88%90%e5%8a%9f%e8%bd%ac%e4%b8%bamarkdown%ef%bc%81%202.5.%20%e6%8a%8a%e8%bd%ac%e5%a5%bd%e7%9a%84markdown%e6%96%87%e4%bb%b6%e5%a4%8d%e5%88%b6%e5%88%b0%e6%9c%ac%e5%9c%b0hugo%20site%e4%b8%ad%e7%9a%84content%e7%9b%ae%e5%bd%95%e4%b8%8b%ef%bc%8c%e7%84%b6%e5%90%8e%e5%9c%a8cmd%e4%b8%adhugo%20site%e7%9b%ae%e5%bd%95%e4%b8%8b%e8%bf%90%e8%a1%8c%20%24%20hugo%20server%20%26ndash%3btheme%3dhugo-theme-crisp%ef%bc%8c%e7%84%b6%e5%90%8e%e7%bd%91%e9%a1%b5%e8%be%93%e5%85%a5localhost%ef%bc%9a1313%e5%b0%b1%e5%8f%af%e4%bb%a5%e7%9c%8b%e5%88%b0%e4%bb%a5%e5%89%8dword%20press%e7%9a%84post%e5%b7%b2%e7%bb%8f%e9%83%bd%e7%a7%bb%e5%88%b0hugo%20site%e4%b8%ad%e5%95%a6~~~%20%e5%9c%a8cmd%e4%b8%adhugo%20site%e7%9b%ae%e5%bd%95%e4%b8%8b%e8%bf%90%e8%a1%8c%24%20hugo%20%e2%80%93-theme%3dhugo-theme-crisp%20%e2%80%93-baseUrl%3d%e2%80%9chttp%3a%2f%2fyiyuanli...." class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803 c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048 h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501 c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546 C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"/>
@@ -691,7 +722,7 @@ footer a:hover
       </li>
       <li class="tumblr">
 					<script>
-						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/yiyuanli.github.io\/site\/post\/asymptote-install\/') + '&amp;t=Asymptote Installation" class="popup">');
+						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/yiyuanli.github.io\/site\/post\/wordpress-to-hugo\/') + '&amp;t=wordpress转hugo，并托管在GitHub上" class="popup">');
 					</script>
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -702,7 +733,7 @@ footer a:hover
           <script>document.write('</a>');</script>
       </li>
       <li class="reddit">
-          <a href="http://www.reddit.com/submit?url=http://yiyuanli.github.io/site/post/asymptote-install/">
+          <a href="http://www.reddit.com/submit?url=http://yiyuanli.github.io/site/post/wordpress-to-hugo/">
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 											<g>
@@ -717,7 +748,7 @@ footer a:hover
           </a>
       </li>
       <li class="googleplus">
-          <a href="https://plus.google.com/share?url=http://yiyuanli.github.io/site/post/asymptote-install/" class="popup">
+          <a href="https://plus.google.com/share?url=http://yiyuanli.github.io/site/post/wordpress-to-hugo/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <g>
@@ -736,7 +767,7 @@ footer a:hover
 						if (firstimg !== undefined) {
 							imgurl = firstimg.src;
 						}
-						document.write('<a href="http://pinterest.com/pin/create/button/?url=http:\/\/yiyuanli.github.io\/site\/post\/asymptote-install\/&amp;media=' + imgurl + '&amp;description=Asymptote Installation" class="popup">');
+						document.write('<a href="http://pinterest.com/pin/create/button/?url=http:\/\/yiyuanli.github.io\/site\/post\/wordpress-to-hugo\/&amp;media=' + imgurl + '&amp;description=wordpress转hugo，并托管在GitHub上" class="popup">');
 					</script>
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -747,7 +778,7 @@ footer a:hover
           <script>document.write('</a>');</script>
       </li>
       <li class="pocket">
-          <a href="https://getpocket.com/save?url=http://yiyuanli.github.io/site/post/asymptote-install/"  class="popup">
+          <a href="https://getpocket.com/save?url=http://yiyuanli.github.io/site/post/wordpress-to-hugo/"  class="popup">
               <span class="icon">
                   <svg width="32px" height="28px" viewBox="0 0 32 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
                       <path d="M28.7817528,0.00172488695 C30.8117487,0.00431221738 31.9749312,1.12074529 31.9644402,3.10781507 C31.942147,6.67703739 32.1336065,10.2669583 31.8057648,13.8090137 C30.7147076,25.5813672 17.2181194,31.8996281 7.20714461,25.3808491 C2.71833574,22.4571656 0.196577202,18.3122624 0.0549495772,12.9357897 C-0.0342233715,9.5774348 0.00642900214,6.21519891 0.0300336062,2.85555035 C0.0405245414,1.1129833 1.21157517,0.0146615391 3.01995012,0.00819321302 C7.34746087,-0.00603710433 11.6775944,0.00431221738 16.0064164,0.00172488695 C20.2644248,0.00172488695 24.5237444,-0.00215610869 28.7817528,0.00172488695 L28.7817528,0.00172488695 Z M8.64885184,7.85611511 C7.38773662,7.99113854 6.66148108,8.42606978 6.29310958,9.33228474 C5.90114134,10.2969233 6.17774769,11.1421181 6.89875951,11.8276216 C9.35282156,14.161969 11.8108164,16.4924215 14.2976518,18.7943114 C15.3844131,19.7966007 16.5354102,19.7836177 17.6116843,18.7813283 C20.0185529,16.5495467 22.4070683,14.2982907 24.7824746,12.0327533 C25.9845979,10.8850542 26.1012707,9.56468083 25.1469132,8.60653379 C24.1361858,7.59255976 22.8449191,7.6743528 21.5890476,8.85191291 C19.9936451,10.3488554 18.3680912,11.8172352 16.8395462,13.3777945 C16.1342655,14.093159 15.7200114,14.0048744 15.0566806,13.3440386 C13.4599671,11.7484252 11.8081945,10.2060421 10.1262706,8.70001155 C9.65564653,8.27936164 9.00411403,8.05345704 8.64885184,7.85611511 L8.64885184,7.85611511 L8.64885184,7.85611511 Z"></path>
