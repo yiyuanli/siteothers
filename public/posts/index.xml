@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>YIYUAN LI</title>
-    <link>http://yiyuanli.github.io/site/</link>
-    <description>Recent content on YIYUAN LI</description>
+    <title>Posts on YIYUAN LI</title>
+    <link>http://yiyuanli.github.io/site/posts/</link>
+    <description>Recent content in Posts on YIYUAN LI</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Oct 2017 10:30:16 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Nov 2016 03:09:13 +0000</lastBuildDate>
     
-	<atom:link href="http://yiyuanli.github.io/site/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://yiyuanli.github.io/site/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -119,62 +119,6 @@ Asymptote (download); ghostscript (download); gsview (download); Python (downloa
  Install Asymptote (compulsory):
 asymptote-xx-setup.exe (e.g. asymptote-2.38-setup.exe).
 Note: it has to be added to the environmental path. (My computer – Properties – system – advanced system settings – in “Advanced” tab, click “Environment Variables” – in “System variables”, choose “Path” section then “Edit” – Add the path where you install the Asymptote) ( e.g. C:\Program Files (x86)\Asymptote) Install ghostscript (compulsory):</description>
-    </item>
-    
-    <item>
-      <title>Arts</title>
-      <link>http://yiyuanli.github.io/site/arts/</link>
-      <pubDate>Tue, 22 Nov 2016 06:25:21 +0000</pubDate>
-      
-      <guid>http://yiyuanli.github.io/site/arts/</guid>
-      <description>Photographs            
-hr
-Paintings</description>
-    </item>
-    
-    <item>
-      <title>Academics</title>
-      <link>http://yiyuanli.github.io/site/academics/</link>
-      <pubDate>Tue, 22 Nov 2016 06:24:23 +0000</pubDate>
-      
-      <guid>http://yiyuanli.github.io/site/academics/</guid>
-      <description>My current research focuses on: Direct model updating method using incomplete modal measurements based on system control theory.
-After applying this new method, the updated Finite Element (FE) model can reproduce the measured modal frequencies exactly without disturbing the unmeasured modal frequencies.
-Academics
-At first, a 960 degree-of-freedom (DOF) FE model was used to illustrate the efficiency of this method. The following figures are the first 10 mode shapes of the updated FE model.</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>http://yiyuanli.github.io/site/aboutme/</link>
-      <pubDate>Sun, 20 Nov 2016 01:54:31 +0000</pubDate>
-      
-      <guid>http://yiyuanli.github.io/site/aboutme/</guid>
-      <description>How happy is the blameless vestal’s lot!
-The world forgetting, by the world forgot.
-Eternal sunshine of the spotless mind!
-Each pray’r accepted, and each wish resign’d.
-—Alexander Pope
- After graduated from high school, I chose Applied Chemistry as my major in South China Agricultural University by accident. However, when I actually had the chance to get to know chemistry at university, I realized it was not what I want at all.</description>
-    </item>
-    
-    <item>
-      <title>Home</title>
-      <link>http://yiyuanli.github.io/site/home/</link>
-      <pubDate>Sat, 19 Nov 2016 09:54:08 +0000</pubDate>
-      
-      <guid>http://yiyuanli.github.io/site/home/</guid>
-      <description>Welcome to Yi-Yuan’s Website!
-Home Home Home Home Home My name is Yi-Yuan Li, a Civil Engineering M.Sc student at University of Macau, specializing in Structural Engineering. I am working in Dynamics &amp;amp; Monitoring laboratory under the supervision of Prof. Ka-Veng Yuen. My study interests: Structural Dynamics; Model Updating; Vibration Control; Structural Health Monitoring; System Identification; Modal Analysis; Earthquake Engineering. I’m ready to learn more about them any time! My skills: Matlab; Fortran My Curriculum Vitae My Statement of Interest</description>
-    </item>
-    
-    <item>
-      <title>start</title>
-      <link>http://yiyuanli.github.io/site/home-2/home-2/</link>
-      <pubDate>Fri, 18 Nov 2016 05:51:48 +0000</pubDate>
-      
-      <guid>http://yiyuanli.github.io/site/home-2/home-2/</guid>
-      <description>There is no limits between science and art</description>
     </item>
     
   </channel>

@@ -3,81 +3,68 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://yiyuanli.github.io/site/post/wordpress-to-hugo/</loc>
+    <loc>http://yiyuanli.github.io/site/posts/wordpress-to-hugo/</loc>
     <lastmod>2017-10-15T10:30:16+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yiyuanli.github.io/site/post/%e5%9f%ba%e4%ba%8ehugo%e7%9a%84%e9%9d%99%e6%80%81%e5%8d%9a%e5%ae%a2%e5%bb%ba%e7%ab%8b%e5%8f%8a%e9%83%a8%e7%bd%b2%e5%9c%a8github%e4%b8%8a/</loc>
+    <loc>http://yiyuanli.github.io/site/posts/hugo-website-build/</loc>
     <lastmod>2017-04-29T10:30:16+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yiyuanli.github.io/site/post/cv-sample-in-latex/</loc>
+    <loc>http://yiyuanli.github.io/site/posts/cv-sample-in-latex/</loc>
     <lastmod>2017-01-13T07:55:21+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yiyuanli.github.io/site/post/personal-websites-recommendation/</loc>
+    <loc>http://yiyuanli.github.io/site/posts/personal-websites-recommendation/</loc>
     <lastmod>2016-11-30T13:27:04+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yiyuanli.github.io/site/post/linearity-and-nonlinearity/</loc>
+    <loc>http://yiyuanli.github.io/site/posts/linearity-and-nonlinearity/</loc>
     <lastmod>2016-11-30T12:42:56+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yiyuanli.github.io/site/post/asymptote-test-drawing-a-shearing-building/</loc>
+    <loc>http://yiyuanli.github.io/site/posts/asymptote-test-drawing-a-shearing-building/</loc>
     <lastmod>2016-11-23T09:36:46+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yiyuanli.github.io/site/post/asymptote-install/</loc>
+    <loc>http://yiyuanli.github.io/site/posts/asymptote-install/</loc>
     <lastmod>2016-11-23T03:09:13+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yiyuanli.github.io/site/arts/arts/</loc>
+    <loc>http://yiyuanli.github.io/site/posts/</loc>
+    <lastmod>2016-11-23T03:09:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yiyuanli.github.io/site/arts/</loc>
     <lastmod>2016-11-22T06:25:21+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yiyuanli.github.io/site/academic/academic/</loc>
+    <loc>http://yiyuanli.github.io/site/academics/</loc>
     <lastmod>2016-11-22T06:24:23+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yiyuanli.github.io/site/about-me/aboutme/</loc>
+    <loc>http://yiyuanli.github.io/site/aboutme/</loc>
     <lastmod>2016-11-20T01:54:31+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yiyuanli.github.io/site/home/home/</loc>
+    <loc>http://yiyuanli.github.io/site/home/</loc>
     <lastmod>2016-11-19T09:54:08+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://yiyuanli.github.io/site/home-2/home-2/</loc>
     <lastmod>2016-11-18T05:51:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yiyuanli.github.io/site/about-me/</loc>
-    <lastmod>2016-11-20T01:54:31+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://yiyuanli.github.io/site/academic/</loc>
-    <lastmod>2016-11-22T06:24:23+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://yiyuanli.github.io/site/arts/</loc>
-    <lastmod>2016-11-22T06:25:21+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -88,18 +75,6 @@
   <url>
     <loc>http://yiyuanli.github.io/site/home-2/</loc>
     <lastmod>2016-11-18T05:51:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://yiyuanli.github.io/site/home/</loc>
-    <lastmod>2016-11-19T09:54:08+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://yiyuanli.github.io/site/post/</loc>
-    <lastmod>2017-10-15T10:30:16+00:00</lastmod>
     <priority>0</priority>
   </url>
   
